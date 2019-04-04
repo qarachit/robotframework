@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generated="20190404 14:30:26.392" generator="Robot 3.1.1 (Python 2.7.15 on win32)">
+<suite source="D:\pythonrepo\robotframework\search_flights\search_flights.robot" id="s1" name="Search Flights">
+<kw type="setup" name="Open search page" library="search_flights_keywords">
+<kw name="Open" library="SearchFlightPage">
+<status status="PASS" endtime="20190404 14:30:45.018" starttime="20190404 14:30:29.723"></status>
+</kw>
+<status status="PASS" endtime="20190404 14:30:45.019" starttime="20190404 14:30:29.723"></status>
+</kw>
+<test id="s1-t1" name="The user can search for flights">
+<kw name="Select departure" library="search_flights_keywords">
+<arguments>
+<arg>Paris</arg>
+</arguments>
+<kw name="Select Departure City" library="SearchFlightPage">
+<arguments>
+<arg>${city}</arg>
+</arguments>
+<status status="PASS" endtime="20190404 14:30:50.130" starttime="20190404 14:30:45.025"></status>
+</kw>
+<status status="PASS" endtime="20190404 14:30:50.130" starttime="20190404 14:30:45.024"></status>
+</kw>
+<kw name="select destination" library="search_flights_keywords">
+<arguments>
+<arg>London</arg>
+</arguments>
+<kw name="Select Destination City" library="SearchFlightPage">
+<arguments>
+<arg>${city}</arg>
+</arguments>
+<status status="PASS" endtime="20190404 14:30:55.248" starttime="20190404 14:30:50.131"></status>
+</kw>
+<status status="PASS" endtime="20190404 14:30:55.248" starttime="20190404 14:30:50.131"></status>
+</kw>
+<kw name="Search Flights" library="search_flights_keywords">
+<kw name="Search For Flights" library="SearchFlightPage">
+<status status="PASS" endtime="20190404 14:31:01.317" starttime="20190404 14:30:55.249"></status>
+</kw>
+<kw name="Get Found Flights" library="SearchFlightPage">
+<assign>
+<var>@{flights}</var>
+</assign>
+<msg timestamp="20190404 14:31:06.363" level="INFO">@{flights} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="95ecf1e97b5e6b9755aeaf03088b211e", element="0.4012759292381549-1")&gt; | &lt;selenium.webdriver.remote.webelement.WebElement (session="95ecf1e97b...</msg>
+<status status="PASS" endtime="20190404 14:31:06.363" starttime="20190404 14:31:01.318"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${flights}</arg>
+</arguments>
+<msg timestamp="20190404 14:31:06.364" level="INFO">${flights} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="95ecf1e97b5e6b9755aeaf03088b211e", element="0.4012759292381549-1")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="95ecf1e97b5e...</msg>
+<status status="PASS" endtime="20190404 14:31:06.364" starttime="20190404 14:31:06.364"></status>
+</kw>
+<status status="PASS" endtime="20190404 14:31:06.365" starttime="20190404 14:30:55.249"></status>
+</kw>
+<kw name="Flights are found" library="search_flights_keywords">
+<kw name="Should Not Be Empty" library="BuiltIn">
+<doc>Verifies that the given item is not empty.</doc>
+<arguments>
+<arg>${flights}</arg>
+</arguments>
+<msg timestamp="20190404 14:31:06.367" level="INFO">Length is 5</msg>
+<status status="PASS" endtime="20190404 14:31:06.367" starttime="20190404 14:31:06.366"></status>
+</kw>
+<status status="PASS" endtime="20190404 14:31:06.367" starttime="20190404 14:31:06.366"></status>
+</kw>
+<status status="PASS" endtime="20190404 14:31:06.368" critical="yes" starttime="20190404 14:30:45.020"></status>
+</test>
+<kw type="teardown" name="Close pages" library="search_flights_keywords">
+<kw name="Close" library="SearchFlightPage">
+<status status="PASS" endtime="20190404 14:31:09.016" starttime="20190404 14:31:06.376"></status>
+</kw>
+<status status="PASS" endtime="20190404 14:31:09.016" starttime="20190404 14:31:06.375"></status>
+</kw>
+<status status="PASS" endtime="20190404 14:31:09.017" starttime="20190404 14:30:26.395"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Search Flights" pass="1">Search Flights</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
